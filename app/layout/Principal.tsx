@@ -4,12 +4,15 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ConnectWhatsaap from "../components/ConnectWhatsaap";
 import { productos } from "../products/page";
+import { useTheme } from "next-themes";
+import { MoonIcon } from "@heroicons/react/24/outline";
 
 export default function Navbar() {
     const router = useRouter();
     const [query, setQuery] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
     const items = ["Nuestros Servicios", "Servicio de Barberia", "Nuestras Promociones"];
+    const { theme, setTheme } = useTheme()
 
     const handleClick = (option: number) => {
         if (option === 0) {
@@ -41,7 +44,7 @@ export default function Navbar() {
 
 
     return (
-        <nav className="bg-sky-500 text-white p-4">
+        <nav className="bg-sky-500 text-white dark:text-sky-500 p-4 dark:bg-gray-950">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <a onClick={() => handleClick(3)} href="#" className="text-2xl font-bold">
@@ -88,6 +91,10 @@ export default function Navbar() {
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
+                </button>
+
+                <button>
+                    <MoonIcon className="w-6 h-6 text-gray-800 dark:text-white" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}/>
                 </button>
 
                 {/* Menú de navegación en pantallas grandes */}
