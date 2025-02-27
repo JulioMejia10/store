@@ -48,7 +48,7 @@ export default function Dropdown() {
             {/* Botón */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="ml-5 bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-600 transition flex items-center"
+                className="ml-5 bg-sky-500 text-white px-2 py-1 rounded-md hover:bg-sky-600 transition flex items-center"
             >
                 Nuestros productos
                 <svg className="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +57,7 @@ export default function Dropdown() {
             </button>
             {/* Menú */}
             {isOpen && (
-                <div className="absolute ml-4 mt-2 w-48 bg-white shadow-md rounded-md z-10">
+                <div className="z-[100] absolute ml-4 mt-2 w-48 bg-white shadow-md rounded-md z-10">
                     <a onClick={() => handleClick(0)} className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Betterware</a>
                     <a onClick={() => handleClick(1)} className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Tupperware</a>
                     <a onClick={() => handleClick(2)} className="block px-4 py-2 text-gray-700 hover:bg-gray-200">Terramar</a>

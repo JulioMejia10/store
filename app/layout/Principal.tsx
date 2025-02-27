@@ -6,6 +6,7 @@ import ConnectWhatsaap from "../components/ConnectWhatsaap";
 import { productos } from "../products/page";
 import { useTheme } from "next-themes";
 import { MoonIcon } from "@heroicons/react/24/outline";
+import Selector from '../components/Selector';
 
 export default function Navbar() {
     const router = useRouter();
@@ -35,16 +36,11 @@ export default function Navbar() {
                 list.push(item?.id);
             }
         })
-        // if (list.length > 0) {
-        //     router.push(`/results/${list.toString()}`);
-        // } else {
-        //     router.push('/products');
-        // }
     }, [query, router])
 
 
     return (
-        <nav className="bg-sky-500 text-white dark:text-sky-500 p-4 dark:bg-gray-950">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-sky-500 text-white dark:text-sky-500 pt-4 dark:bg-gray-950 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <a onClick={() => handleClick(3)} href="#" className="text-2xl font-bold">
@@ -62,27 +58,7 @@ export default function Navbar() {
                     <svg className="absolute left-3 top-2.5 text-gray-500 w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
-                    {/* Resultados */}
-                    {/* <div>
-                        {JSON.stringify(filteredItems)}
-                    </div> */}
-                    {/* {!query && (
-                        <>
-                            <ul className="absolute bg-white text-black shadow-md rounded-lg mt-2 w-full">
-                                {filteredItems.length > 0 ? (
-                                    filteredItems.map((item, index) => (
-                                        <li key={index} className="p-2 hover:bg-gray-100 cursor-pointer">
-                                            {item.descripcion}
-                                        </li>
-                                    ))
-                                ) : (
-                                    <li className="p-2 text-gray-500">No se encontraron resultados</li>
-                                )}
-                            </ul>
-                        </>
-                    )} */}
                 </div>
-
                 {/* Botón del menú en móviles */}
                 <button
                     className="md:hidden text-white focus:outline-none"
@@ -94,7 +70,7 @@ export default function Navbar() {
                 </button>
 
                 <button>
-                    <MoonIcon className="w-6 h-6 text-gray-800 dark:text-white" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}/>
+                    <MoonIcon className="w-6 h-6 text-gray-800 dark:text-white" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} />
                 </button>
 
                 {/* Menú de navegación en pantallas grandes */}
@@ -105,6 +81,9 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
+            </div>
+            <div className="bg-sky-200 mx-auto mx-auto pt-2 pb-2 mt-2">
+                <Selector />
             </div>
 
             {/* Menú desplegable en móviles/tablets */}

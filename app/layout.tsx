@@ -32,15 +32,15 @@ export default function RootLayout({
         className={`bg-gray-100 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class">
-            <Principal />
-            <div className="bg-sky-200 mx-auto p-1">
-              <Selector />
+          <Principal />
+          {/* <div className="bg-sky-200 mx-auto p-3">
+            <Selector />
+          </div> */}
+          <div className="mx-auto">
+            <div>
+              {children}
             </div>
-            <div className="mx-auto">
-              <div>
-                {children}
-              </div>
-            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
