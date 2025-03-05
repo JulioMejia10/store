@@ -33,13 +33,8 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class">
           <Principal />
-          {/* <div className="bg-sky-200 mx-auto p-3">
-            <Selector />
-          </div> */}
-          <div className="mx-auto">
-            <div>
-              {children}
-            </div>
+          <div className="mx-auto pt-30 mt-24">
+            {children}
           </div>
         </ThemeProvider>
       </body>

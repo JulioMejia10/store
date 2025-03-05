@@ -100,8 +100,8 @@ const Page = () => {
                 {/* Contenido del parallax */}
                 <div className="absolute inset-0 flex justify-center items-center text-white text-center z-10">
                     <div>
-                        <h1 className="text-4xl md:text-6xl font-bold">Servicio de barberia</h1>
-                        <p className="mt-4 text-lg md:text-xl">Cortes Profesionales</p>
+                        <h1 className="text-4xl md:text-6xl font-bold drop-shadow-[2px_2px_8px_black]">Venta de productos por catalogo</h1>
+                        <p className="mt-4 text-lg md:text-xl drop-shadow-[4px_4px_6px_black]">Tenemos muchos productos en tienda</p>
                     </div>
                 </div>
             </div>
@@ -122,8 +122,8 @@ const Page = () => {
                 {/* Contenido del parallax */}
                 <div className="absolute inset-0 flex justify-center items-center text-white text-center z-10">
                     <div>
-                        <h1 className="text-4xl md:text-6xl font-bold">Servicio de barberia</h1>
-                        <p className="mt-4 text-lg md:text-xl">Cortes Profesionales</p>
+                        <h1 className="text-4xl md:text-6xl font-bold drop-shadow-[2px_2px_10px_black]">Venta de productos por catalogo</h1>
+                        <p className="mt-4 text-lg md:text-xl drop-shadow-[4px_4px_8px_black]">Tenemos muchos productos en tienda</p>
                     </div>
                 </div>
             </div>
